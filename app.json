@@ -26,9 +26,9 @@
             "value": "",
             "required": true
         },
-        "BOT_NAME": {
-            "description": "Enter Your Telegram Bot Name For Database",
-            "value": "",
+        "OWNER": {
+            "description": "𝙀𝙣𝙩𝙚𝙧 𝙔𝙤𝙪𝙧 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝙄𝘿",
+            "value": "5680454765",
             "required": true
         },
         "MONGO_URI": {
