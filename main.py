@@ -311,7 +311,7 @@ SUBSCRIPTION_FILE = "subscription_data.txt"
 CHANNELS_FILE = "channels_data.json"
 
 # Admin ID
-YOUR_ADMIN_ID = 7146651806
+YOUR_ADMIN_ID = 887699812
 
 # Helper function to check admin privilege
 def is_admin(user_id):
@@ -542,10 +542,10 @@ async def restart_handler(_, m):
 async def moni_handler(client: Client, m: Message):
     await m.delete()
     
-    channels = read_channels_data()
-    if str(m.chat.id) not in channels:
-        await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}\n ❗ For Use In Channel /add_channel {channel_id}\n ❗ For Use In Group /add_channel {group_id}")
-        return
+    # channels = read_channels_data()
+    # if str(m.chat.id) not in channels:
+    #     await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}\n ❗ For Use In Channel /add_channel {channel_id}\n ❗ For Use In Group /add_channel {group_id}")
+    #     return
             
     editable = await m.reply_text('𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐀 𝐓𝐱𝐭 𝐅𝐢𝐥𝐞 𝐒𝐞𝐧𝐝 𝐇𝐞𝐫𝐞 ⏍')
 
@@ -887,10 +887,10 @@ async def moni_handler(client: Client, m: Message):
 @bot.on_message(filters.command(["rajesh"]) )
 async def txt_handler(bot: Client, m: Message):
     await m.delete()
-    channels = read_channels_data()
-    if str(m.chat.id) not in channels:
-        await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}\n ❗ For Use In Channel /add_channel {channel_id}\n ❗ For Use In Group /add_channel {group_id}")
-        return
+    # channels = read_channels_data()
+    # if str(m.chat.id) not in channels:
+    #     await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}\n ❗ For Use In Channel /add_channel {channel_id}\n ❗ For Use In Group /add_channel {group_id}")
+    #     return
             
     editable = await m.reply_text(f"<pre><code>🔹Hi I am Poweful TXT Downloader📥 Bot.\n🔹Send me the txt file and wait.</code></pre>")
     input: Message = await bot.listen(editable.chat.id)
@@ -1257,10 +1257,10 @@ async def txt_handler(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["cpdrm"]) )
 async def txt_handler(bot: Client, m: Message):
-    channels = read_channels_data()
-    if str(m.chat.id) not in channels:
-        await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}\n ❗ For Use In Channel /add_channel {channel_id}\n ❗ For Use In Group /add_channel {group_id}")
-        return
+    # channels = read_channels_data()
+    # if str(m.chat.id) not in channels:
+    #     await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}\n ❗ For Use In Channel /add_channel {channel_id}\n ❗ For Use In Group /add_channel {group_id}")
+    #     return
         
     editable = await m.reply_text(f"<pre><code>🔹Hi I am Poweful CP DRM converter📥 Bot.\n🔹Send me the txt file and wait.</code></pre>")
     input: Message = await bot.listen(editable.chat.id)
@@ -1509,13 +1509,13 @@ async def txt_handler(bot: Client, m: Message):
     
 @bot.on_message(filters.text & filters.private)
 async def text_handler(bot: Client, m: Message):
-    channels = read_channels_data()
-    if str(m.chat.id) not in channels:
-        await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}")
-        return
+    # channels = read_channels_data()
+    # if str(m.chat.id) not in channels:
+    #     await m.reply_text("❌ Please upgrade your Subscription! 💎 then\n ❗ For Use In Bot /add_channel {user_id}")
+    #     return
         
-    if m.from_user.is_bot:
-        return
+    # if m.from_user.is_bot:
+    #     return
     links = m.text
     match = re.search(r'https?://\S+', links)
     if match:
