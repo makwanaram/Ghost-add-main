@@ -193,7 +193,7 @@ def is_admin(func):
     return wrapper
 
 @bot.on_message(filters.command("cookies") & filters.private)
-@is_sudo
+# @is_sudo
 async def cookies_handler(client: Client, m: Message):
     await m.reply_text(
         "Please upload the cookies file (.txt format).",
@@ -228,7 +228,7 @@ async def cookies_handler(client: Client, m: Message):
         await m.reply_text(f"⚠️ An error occurred: {str(e)}")
 
 @bot.on_message(filters.command(["t2t"]))
-@is_sudo
+# @is_sudo
 async def text_to_txt(client, message: Message):
     user_id = str(message.from_user.id)
     # Inform the user to send the text data and its desired file name
@@ -265,7 +265,7 @@ UPLOAD_FOLDER = '/path/to/upload/folder'
 EDITED_FILE_PATH = '/path/to/save/edited_output.txt'
 
 @bot.on_message(filters.command(["y2t"]))
-@is_sudo
+# @is_sudo
 async def youtube_to_txt(client, message: Message):
     user_id = str(message.from_user.id)
     
@@ -331,7 +331,7 @@ async def youtube_to_txt(client, message: Message):
 
 m_file_path= "main.py"
 @bot.on_message(filters.command("getcookies") & filters.private)
-@is_sudo
+# @is_sudo
 async def getcookies_handler(client: Client, m: Message):
     try:
         # Send the cookies file to the user
@@ -401,13 +401,13 @@ async def start_command(bot: Client, message: Message):
     )
 
 @bot.on_message(filters.command(["id"]))
-@force_sub
+# @force_sub
 async def id_command(client, message: Message):
     chat_id = message.chat.id
     await message.reply_text(f"<blockquote>The ID of this chat id is:</blockquote>\n`{chat_id}`")
 
 @bot.on_message(filters.private & filters.command(["info"]))
-@force_sub
+# @force_sub
 async def info(bot: Client, update: Message):
     
     text = (
@@ -428,7 +428,7 @@ async def info(bot: Client, update: Message):
     )
 
 @bot.on_message(filters.command(["help"]))
-@force_sub
+# @force_sub
 async def txt_handler(client: Client, m: Message):
     await bot.send_message(
         m.chat.id,
@@ -474,7 +474,7 @@ async def txt_handler(client: Client, m: Message):
 
           
 @bot.on_message(filters.command(["logs"]))
-@is_sudo
+# @is_sudo
 async def send_logs(client: Client, m: Message):  # Correct parameter name
     try:
         with open("logs.txt", "rb") as file:
@@ -485,8 +485,8 @@ async def send_logs(client: Client, m: Message):  # Correct parameter name
         await m.reply_text(f"Error sending logs: {e}")
 
 @bot.on_message(filters.command(["drm"]))
-@force_sub
-@is_sudo
+# @force_sub
+# @is_sudo
 async def txt_handler(bot: Client, m: Message):
     # Send the initial loading message
     loading_message = await bot.send_message(chat_id=m.chat.id, text="Initializing...")
@@ -1290,20 +1290,20 @@ async def refresh_subscription_callback(client: Client, callback_query):
 
 # Add force_sub decorator to your command handlers
 @bot.on_message(filters.command(["start"]))
-@force_sub
+# @force_sub
 async def start_command(bot: Client, message: Message):
     # Your existing start command code remains unchanged
     pass
 
 @bot.on_message(filters.command(["help"]))
-@force_sub
+# @force_sub
 async def txt_handler(client: Client, m: Message):
     # Your existing help command code remains unchanged
     pass
 
 @bot.on_message(filters.command(["drm"]))
-@force_sub
-@is_sudo
+# @force_sub
+# @is_sudo
 async def txt_handler(bot: Client, m: Message):
     # Your existing drm command code remains unchanged
     pass
@@ -1311,13 +1311,13 @@ async def txt_handler(bot: Client, m: Message):
 # Add force_sub decorator to other command handlers that should require subscription
 # For example:
 @bot.on_message(filters.command(["id"]))
-@force_sub
+# @force_sub
 async def id_command(client, message: Message):
     # Your existing id command code remains unchanged
     pass
 
 @bot.on_message(filters.command(["info"]))
-@force_sub
+# @force_sub
 async def info(bot: Client, update: Message):
     # Your existing info command code remains unchanged
     pass
