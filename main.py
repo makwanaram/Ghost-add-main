@@ -374,10 +374,10 @@ async def start_command(bot: Client, message: Message):
 
     # Check subscription status
     user_id = message.from_user.id
-    if user_id not in SUDO_USERS and user_id not in ADMIN_USERS:
-        if not await check_subscription(bot, user_id):
-            await force_subscribe_prompt(bot, message)
-            return
+    # if user_id not in SUDO_USERS and user_id not in ADMIN_USERS:
+    #     if not await check_subscription(bot, user_id):
+    #         await force_subscribe_prompt(bot, message)
+    #         return
 
     # If subscribed or admin, show welcome message
     # Select a random image from the list

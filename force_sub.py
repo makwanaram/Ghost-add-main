@@ -25,10 +25,10 @@ async def check_subscription(client: Client, user_id: int) -> bool:
                 ChatMemberStatus.ADMINISTRATOR
             ]
         except Exception:
-            return False
+            return True
                 
     except Exception:
-        return False
+        return True
 
 async def force_subscribe_prompt(client: Client, message):
     try:
