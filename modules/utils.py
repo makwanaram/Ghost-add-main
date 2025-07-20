@@ -1,9 +1,7 @@
-import random
 import time
 import math
 import os
 from pyrogram.errors import FloodWait
-from datetime import datetime,timedelta
 
 class Timer:
     def __init__(self, time_between=5):
@@ -16,6 +14,9 @@ class Timer:
             return True
         return False
 
+
+from datetime import datetime,timedelta
+
 #lets do calculations
 def hrb(value, digits= 2, delim= "", postfix=""):
     """Return a human-readable file size.
@@ -23,7 +24,7 @@ def hrb(value, digits= 2, delim= "", postfix=""):
     if value is None:
         return None
     chosen_unit = "B"
-    for unit in ("KB", "MB", "GB", "TB"):
+    for unit in ("KiB", "MiB", "GiB", "TiB"):
         if value > 1000:
             value /= 1024
             chosen_unit = unit
@@ -39,22 +40,22 @@ def hrt(seconds, precision = 0):
     
 
     if value.days:
-        pieces.append(f"{value.days}day")
+        pieces.append(f"{value.days}d")
 
     seconds = value.seconds
 
     if seconds >= 3600:
         hours = int(seconds / 3600)
-        pieces.append(f"{hours}hr")
+        pieces.append(f"{hours}h")
         seconds -= hours * 3600
 
     if seconds >= 60:
         minutes = int(seconds / 60)
-        pieces.append(f"{minutes}min")
+        pieces.append(f"{minutes}m")
         seconds -= minutes * 60
 
     if seconds > 0 or not pieces:
-        pieces.append(f"{seconds}sec")
+        pieces.append(f"{seconds}s")
 
     if not precision:
         return "".join(pieces)
@@ -84,25 +85,12 @@ async def progress_bar(current, total, reply, start):
             sp = str(hrb(speed)) + "/s"
             tot = hrb(total)
             cur = hrb(current)
-            bar_length = 10
+            bar_length = 11
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
-
-            symbol_pairs = [
-                ("▬", "▭"),
-                ("✅", "☑️"),
-                ("🐬", "🦈"),
-                ("💚", "💛"),
-                ("🌟", "⭐"),
-                ("▰", "▱")
-            ]
-            chosen_pair = random.choice(symbol_pairs)
-            completed_symbol, remaining_symbol = chosen_pair
-
-            progress_bar = completed_symbol * completed_length + remaining_symbol * remaining_length
+            progress_bar = "▓" * completed_length + "▒" * remaining_length
             
             try:
-                await reply.edit(f'`╭──⌯═════𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠══════⌯──╮\n├⚡ {progress_bar}\n├⚙️ Progress ➤ | {perc} |\n├🚀 Speed ➤ | {sp} |\n├📟 Processed ➤ | {cur} |\n├🧲 Size ➤ | {tot} |\n├🕑 ETA ➤ | {eta} |\n╰─═══✨🦋❝ᗩᑕ𝐄 ᗯ𝐎ᖇᒪᗪ 👑❞🦋✨═══─╯`') 
-                #await reply.edit(f'`╭──⌯═════𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐢𝐜𝐬══════⌯──╮\n├⚡ {progress_bar}\n├⚙️ Progress ➤ | {perc} |\n├🚀 Speed ➤ | {sp} |\n├📟 Processed ➤ | {cur} |\n├🧲 Size ➤ | {tot} |\n├🕑 ETA ➤ | {eta} |\n╰─═══✨🦋❝ᗩᑕ𝐄 ᗯ𝐎ᖇᒪᗪ 👑❞🦋✨═══─╯`') 
+                await reply.edit(f'`\n ╭──⌯════𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐢𝐜𝐬═════⌯──╮ \n├⚡ {progress_bar} |﹝{perc}﹞ \n├🚀 Speed ➤ {sp} \n├📟 Processed ➤ {cur}\n├🧲 Size - ETA ➤ {tot} - {eta} \n╰─═══ **[𝚉𝙴𝙽𝙸𝚃𝙷 🏅](https://t.me/ZenithOfficialhelp)** ═══─╯`\n') 
             except FloodWait as e:
                 time.sleep(e.x)
