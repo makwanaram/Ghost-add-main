@@ -1,14 +1,14 @@
 {
-    "name": "ZENITH",
-    "description": "TXT UPLOADER",
-    "logo": "https://envs.sh/r5x.jpg",
+    "name": "Jack Bot",
+    "description": "𝑻𝒆𝒙𝒕 𝑳𝒆𝒆𝒄𝒉 𝑽𝒊𝒅𝒆𝒐 𝑬𝒙𝒕𝒓𝒂𝒄𝒕𝒐𝒓 𝑭𝒐𝒓 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎",
+    "logo": "https://graph.org/file/6307bea2182f82424bf90-e2f24f59f49a97b6c8.jpg",
     "keywords": [
         "text-video",
         "video-extract",
         "pyrogram"
     ],
     "repository": "https://github.com/makwanaram/Ghost-add-main",
-    "success_url": "",
+    "success_url": "https://graph.org/file/6307bea2182f82424bf90-e2f24f59f49a97b6c8.jpg",
     "stack": "container",
     "env": {
         "API_ID": {
@@ -31,9 +31,9 @@
             "value": "5680454765",
             "required": true
         },
-        "MONGO_URI": {
-            "description": "Enter your MongoDB connection string",
-            "value": "mongodb+srv://makwanaram:Hackthis008@cluster0.w69onvk.mongodb.net",
+        "CREDIT": {
+            "description": "𝙀𝙣𝙩𝙚𝙧 𝘾𝙧𝙚𝙙𝙞𝙩 𝙉𝙖𝙢𝙚 𝙞𝙣 𝙖𝙡𝙢𝙤𝙨𝙩 6-8 𝙡𝙚𝙩𝙩𝙚𝙧𝙨",
+            "value": "𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎",
             "required": true
         }
     },
